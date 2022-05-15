@@ -22,26 +22,31 @@ public class C04_Assertions {
     }
     @Test
     public void test01(){
-        /* Eger Test method'umuzda hicbir test yoksa, test calistiktan sonra
-           hic bir problemle karsilasilmadigini raporlamak icin "tests passed" yazisi cikar
-           Eger testleri if ile yaparsak
-           test failed olsa bile kodlar problemsiz calistigi icin
-           kod calismasi bittiginde
-           ekranin sol alt kisminda test passed yazacaktir
-         */
+            /*
+        Eger Test method'umuzda hicbir test yoksa, test calistiktan sonra
+        hic bir problemle karsilasilmadigini raporlamak icin "tests passed" yazisi cikar
+        Eger testleri if ile yaparsak
+        test failed olsa bile kodlar problemsiz calistigi icin
+        kod calismasi bittiginde
+        ekranin sol alt kisminda test passed yazacaktir
+            */
+
         driver.get("https://www.amazon.com");
+
         // url'in https://www.facebook.com oldugunu test edin
-/*
+            /*
         if (driver.getCurrentUrl().equals("https://www.facebook.com")){
             System.out.println("Url testi PASSED");
         } else {
             System.out.println("Url testi FAILED");
         }
- */
+           */
+
         String expectedUrl="https://www.facebook.com";
         String actualUrl=driver.getCurrentUrl();
         Assert.assertEquals("Url beklenenden farkli",expectedUrl,actualUrl);
-        /*
+
+            /*
         Assert ile yaptigimiz testlerde assertion failed olursa
         Java kodlarin calismasini durdurur ve Assert class'i
         bizi hata konusunda bilgilendirir
@@ -51,6 +56,6 @@ public class C04_Assertions {
                 <Click to see difference>
         Boylece hatanin ne oldugunu arastirmamiza gerek kalmadan
         JUnit bize raporlamis olacak        
-         */
+            */
     }
 }

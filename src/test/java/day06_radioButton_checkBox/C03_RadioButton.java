@@ -27,19 +27,24 @@ public class C03_RadioButton {
     public void test01() throws InterruptedException {
         //https://www.facebook.com adresine gidin
         driver.get("https://www.facebook.com");
+
         //Cookies’i kabul edin
-        driver.findElement(By.xpath("//*[text()='Allow essential and optional cookies']")).click();
+        Thread.sleep(3000);
+        driver.findElement(By.xpath("//*[@title='Temel ve isteğe bağlı çerezlere izin ver']")).click();
+
         //“Create an Account” button’una basin
-        driver.findElement(By.xpath("//*[text()='Create new account']")).click();
+        Thread.sleep(3000);
+        driver.findElement(By.xpath("//a[@class='_42ft _4jy0 _6lti _4jy6 _4jy2 selected _51sy']")).click();
+
         //“radio buttons” elementlerini locate edin
-        WebElement femaleButton=driver.findElement(By.xpath("//input[@value='1']"));
-        WebElement maleButton=driver.findElement(By.xpath("//input[@value='2']"));
-        WebElement customButton=driver.findElement(By.xpath("//input[@value='-1']"));
-        //Secili degilse cinsiyet butonundan size uygun olani secin
+        WebElement kadin = driver.findElement(By.xpath("(//input[@type='radio'])[1]"));
+        WebElement erkek = driver.findElement(By.xpath("(//input[@type='radio'])[2]"));
+        WebElement özel = driver.findElement(By.xpath("(//input[@type='radio'])[3]"));
+
+        //-Secili degilse cinsiyet butonundan size uygun olani secin
         Thread.sleep(3000);
-        if (!maleButton.isSelected()){
-            maleButton.click();
+        if (!özel.isSelected()){
+            özel.click();
         }
-        Thread.sleep(3000);
     }
 }

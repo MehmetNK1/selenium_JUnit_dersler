@@ -8,9 +8,9 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import java.time.Duration;
+// 1. Bir class oluşturun : CheckBoxTest
 public class C02_CheckBox {
     WebDriver driver;
-    // 1. Bir class oluşturun : CheckBoxTest
     //2.Gerekli yapiyi olusturun ve aşağıdaki görevi tamamlayın.
     @Before
     public void setUp(){
@@ -28,17 +28,21 @@ public class C02_CheckBox {
         //a. Verilen web sayfasına gidin.
         //https://the-internet.herokuapp.com/checkboxes
         driver.get("https://the-internet.herokuapp.com/checkboxes");
+
         //b. Checkbox1 ve checkbox2 elementlerini locate edin.
         WebElement checkBox1=driver.findElement(By.xpath("(//input[@type='checkbox'])[1]"));
         WebElement checkBox2=driver.findElement(By.xpath("(//input[@type='checkbox'])[2]"));
+
         //c. Checkbox1 seçili değilse onay kutusunu tıklayın
         Thread.sleep(3000);
         if (!checkBox1.isSelected()){
             checkBox1.click();
         }
+
         //d. Checkbox2 seçili değilse onay kutusunu tıklayın
         Thread.sleep(3000);
         if (!checkBox2.isSelected()){
+            //Eger checkbox seciliyse 44.satirdaki islem secili olan tiki kaldirmamizi saglar
             checkBox2.click();
         }
         Thread.sleep(3000);
