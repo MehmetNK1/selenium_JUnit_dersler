@@ -1,4 +1,4 @@
-package practice;
+package practice.ders_1;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import java.time.Duration;
