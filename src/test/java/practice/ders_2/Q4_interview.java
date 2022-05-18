@@ -7,19 +7,7 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import java.time.Duration;
 
 public class Q4_interview {
-    /*
-    ...Exercise4...
-    https://www.teknosa.com/ adresine gidiniz
-    arama cubuguna oppo yazip enter deyiniz
-    sonuc sayisini yazdiriniz
-    cikan ilk urune tiklayiniz
-    sepete ekleyiniz
-    sepetime git e tiklayiniz
-    consol da "Sipariş Özeti" webelementinin text ini yazidiriniz
-    Alisverisi tamamlayiniz
-    son alarak da "Teknosa'ya hoş geldiniz"  webelementinin text ini yazidiriniz
-    driver i kapatiniz
-*/
+
 
     //Not : https://www.guru99.com/chrome-options-desiredcapabilities.html
 
@@ -46,22 +34,41 @@ public class Q4_interview {
             js.executeScript("window.scrollBy(0,1000)"); // Dikey olarak 1000 piksel aşağı kaydır
      */
 
+
+    /*
+   ...Exercise4...
+
+
+
+
+
+   driver i kapatiniz
+*/
     public static void main(String[] args) {
         WebDriverManager.chromedriver().setup();
         WebDriver driver = new ChromeDriver();
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
+       // https://www.teknosa.com/ adresine gidiniz
         driver.get("https://www.teknosa.com/");
 
+       // arama cubuguna oppo yazip enter deyiniz
         ChromeOptions op = new ChromeOptions();
         op.addArguments("disable-popup-blocking");
         WebElement searchArea = driver.findElement(By.xpath("//input[@id ='search-input']"));
         searchArea.sendKeys("oppo" + Keys.ENTER);
+        //sonuc sayisini yazdiriniz
         System.out.println(driver.findElement(By.xpath("//div[@class ='plp-info']")).getText());
 
+        //cikan ilk urune tiklayiniz
+        //   sepete ekleyiniz
         driver.findElement(By.xpath("(//a[@class='prd-link'])[1]")).click();
         driver.findElement(By.xpath("//button[@id ='addToCartButton']")).click();
 
+        //sepetime git e tiklayiniz
+        //   consol da "Sipariş Özeti" webelementinin text ini yazidiriniz
+        //   Alisverisi tamamlayiniz
+        //   son alarak da "Teknosa'ya hoş geldiniz"  webelementinin text ini yazidiriniz
         driver.findElement(By.xpath("//a[@class ='btn btn-secondary']")).click();
         System.out.println("siparis ozeti yazisi :" +  driver.findElement(By.xpath("//div[@class= 'cart-sum-title']")).getText());
         driver.findElement(By.xpath("//span[.= 'Alışverişi Tamamla']")).click();
