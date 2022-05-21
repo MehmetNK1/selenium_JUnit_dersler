@@ -17,7 +17,7 @@ public class C01_handleWindows {
     }
     @After
     public void tearDown(){
-        driver.quit();
+        //driver.quit();
     }
     @Test
     public void test01(){
@@ -37,9 +37,12 @@ public class C01_handleWindows {
          */
         // 3- ilk urunun resmini tiklayarak farkli bir tab olarak acin
         WebElement ilkUrunResmi=driver.findElement(By.xpath("(//div[@class='a-section aok-relative s-image-square-aspect'])[1]"));
+
         driver.switchTo().newWindow(WindowType.TAB);
         /*
         Bu komutu kullandigimizda driver otomatik olarak olusturulan
+
+
         new Tab'a gecer
         yeni tab'da gorevi gerceklestirmek icin
         adimlari bastan almamiz gerekir
