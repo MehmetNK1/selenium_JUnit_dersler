@@ -9,5 +9,12 @@ public class Q2 {
     //click on the ok button
     //accept the alert message
 
+    //web sitesine gidin: https://www.jqueryscript.net/demo/bootstrap-alert-box/
+    // pencereyi büyüt
+    // eylem diyalog düğmesine tıklayın
+    //kullanmanız gerekiyorsa açıkça bekleyin
+    // tamam butonuna tıklayın
+    // uyarı mesajını kabul et
+
 
 }
