@@ -20,7 +20,7 @@ public class C04_ReadExcel {
         System.out.println(sonSatir);
         String satirdakiData="";
         for (int i = 0; i <=sonSatir; i++) {
-            //satirdakiData= C03_ReadExcel.banaDataGetir(i,1);
+            satirdakiData= C03_ReadExcel.banaDataGetir(i,1);
             System.out.println(satirdakiData);
         }
     }
