@@ -20,12 +20,13 @@ public class C05_ReadExcel {
         // satir sayisinin , kullanilan satir sayisinin ise 12 oldugunu test edin
         int sonSatirIndex=workbook
                 .getSheet("Sayfa2")
-                .getLastRowNum();
+                .getLastRowNum(); // son satir indexi verilir
         int expectedSatirSayisi=24;
         Assert.assertEquals(expectedSatirSayisi,sonSatirIndex+1);
+        //kullanilan satir sayisinin ise 12 oldugunu test edin
         int kullanilanSatirSayisi=workbook
                 .getSheet("Sayfa2")
-                .getPhysicalNumberOfRows();
+                .getPhysicalNumberOfRows(); // kullanilan satir sayisi verir
         int expectedKullanilanSatirsayisi=12;
         Assert.assertEquals(expectedKullanilanSatirsayisi,kullanilanSatirSayisi);
     }

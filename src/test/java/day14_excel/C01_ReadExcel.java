@@ -11,21 +11,21 @@ public class C01_ReadExcel {
         // 7. Dosya yolunu bir String degiskene atayalim
         String dosyaYolu="src/resources/ulkeler.xlsx";
         //8. FileInputStream objesi olusturup,parametre olarak dosya yolunu girelim
-        FileInputStream fis= new FileInputStream(dosyaYolu);
+        FileInputStream fis= new FileInputStream(dosyaYolu); //pc de exceli okuyup kodlara cevirerek ekledi
         //9. Workbook objesi olusturalim,parameter olarak fileInputStream objesini girelim
         Workbook workbook= WorkbookFactory.create(fis);
         //10. WorkbookFactory.create(fileInputStream)
-        //11. Sheet objesi olusturun workbook.getSheetAt(index)
+        //11. Sheet objesi olusturun workbook.getSheetAt(index) // sayfaya ulasmak
         Sheet sheet= workbook.getSheet("Sayfa1");
-        //12. Row objesi olusturun sheet.getRow(index)
+        //12. Row objesi olusturun sheet.getRow(index) // satira ulasmak
         Row row= sheet.getRow(3);
-        //13. Cell objesi olusturun row.getCell(index)
+        //13. Cell objesi olusturun row.getCell(index) // sutuna ulasmak
         Cell cell=row.getCell(3);
         System.out.println(cell);
         // 3.index'deki satirin 3.index'indeki datanin Cezayir oldugunu test edin
         String expectedData="Cezayir";
-        String actualData=cell.toString();
+        String actualData=cell.toString(); // String olrak ulasmak icin toString olur
         Assert.assertEquals(expectedData,actualData);
-        Assert.assertEquals(expectedData,cell.getStringCellValue());
+//        Assert.assertEquals(expectedData,cell.getStringCellValue());
     }
 }

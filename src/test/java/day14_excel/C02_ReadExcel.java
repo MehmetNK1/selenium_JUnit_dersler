@@ -19,9 +19,9 @@ public class C02_ReadExcel {
         //12. Row objesi olusturun sheet.getRow(index)
         //13. Cell objesi olusturun row.getCell(index)
         String actualData= workbook
-                .getSheet("Sayfa1")
-                .getRow(3)
-                .getCell(3)
+                .getSheet("Sayfa1") //sayfa oluturmak
+                .getRow(3) // satir olusturmak
+                .getCell(3) // sutun olusturmak
                 .toString();
     }
 }
