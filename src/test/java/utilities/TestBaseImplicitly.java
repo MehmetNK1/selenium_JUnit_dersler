@@ -21,6 +21,6 @@ public abstract class TestBaseImplicitly {
 
     @After
     public void after() {
-        //driver.quit();
+        driver.quit();
     }
 }

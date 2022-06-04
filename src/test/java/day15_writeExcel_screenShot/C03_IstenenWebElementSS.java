@@ -17,9 +17,11 @@ public class C03_IstenenWebElementSS extends TestBase {
         driver.get("https://www.amazon.com");
         WebElement aramaKutusu= driver.findElement(By.id("twotabsearchtextbox"));
         aramaKutusu.sendKeys("Nutella"+ Keys.ENTER);
-        WebElement sonucYaziElementi= driver.findElement(By.xpath("//h1[@class='a-size-base s-desktop-toolbar a-text-normal']"));
-        File sonucYaziElementSS= new File("target/ekranGoruntuleri/sonucYazisiSS.jpeg");
-        File temp=sonucYaziElementi.getScreenshotAs(OutputType.FILE);
-        FileUtils.copyFile(temp,sonucYaziElementSS);
+
+        WebElement sonucYaziElementi= driver.findElement(By.xpath("//h1[@class='a-size-base s-desktop-toolbar a-text-normal']")); // 1. adim
+
+        File sonucYaziElementSS= new File("target/ekranGoruntuleri/sonucYazisiSS.jpeg");        // 2, adim
+        File temp=sonucYaziElementi.getScreenshotAs(OutputType.FILE);                       // 3. adim
+        FileUtils.copyFile(temp,sonucYaziElementSS);                                // 4. adim
     }
 }

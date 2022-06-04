@@ -16,13 +16,15 @@ public class C02_TumSayfaScreenShot extends TestBase {
     public void tumSayfa() throws IOException {
         // amazon sayfasina gidip tum sayfanin fotografini cekelim
         driver.get("https://www.amazon.com");
-        TakesScreenshot ts = (TakesScreenshot) driver;
-        LocalDateTime date=LocalDateTime.now();
-        DateTimeFormatter dtf= DateTimeFormatter.ofPattern("YYMMddHHmmss");
-        String tarih = date.format(dtf);
+        TakesScreenshot ts = (TakesScreenshot) driver;             // 1. adim
+        LocalDateTime date=LocalDateTime.now();                     // 5. adim
+        DateTimeFormatter dtf= DateTimeFormatter.ofPattern("YYMMddHHmmss");     //6.adim
+        String tarih = date.format(dtf);                        // 7.adim
 
-        File tumSayfaResim= new File("target/ekranGoruntuleri/tumSayfa"+tarih+".jpeg");
-        File geciciDosya= ts.getScreenshotAs(OutputType.FILE);
-        FileUtils.copyFile(geciciDosya,tumSayfaResim);
+        // dinamik yapmak icin tarih eklendi
+
+        File tumSayfaResim= new File("target/ekranGoruntuleri/tumSayfa"+tarih+".jpeg"); // 2. adim
+        File geciciDosya= ts.getScreenshotAs(OutputType.FILE);                                  // 3 . adim
+        FileUtils.copyFile(geciciDosya,tumSayfaResim);                                        // 4. adim
     }
 }
